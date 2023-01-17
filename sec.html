@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test-sec</title>
+    <link rel="stylesheet" media="all" href="main.css">
 </head>
 <body style="margin: 0px;">
-    <section style="width: 100vw;height: 100vh;">
+    <section style="width: 100vw;height: 100vh;" >
         <div style="width: 100vw;height: 100vh; display: flex;justify-content: center;
-        align-items: center;" >
-            <button style="border:none">SUBMIT</button>
+        align-items: center;">
+        <a href="" id="ifr1" onclick="srcIframe()">
+            <button>SUBMIT</button>
+        </a>
         </div>
     </section>
 
-
     <!-- <script>
-        parent.document.getElementById('iframe').style.height = 
-  document.documentElement.offsetHeight + 'px';
+        function srcIframe() {
+        document.getElementById('ifr1').href = 'https://google.com';
+        }
     </script> -->
 </body>
 </html>
