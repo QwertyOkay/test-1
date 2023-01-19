@@ -19,10 +19,24 @@
     </section>
 
     <script>
-        document.getElementById('ifr1').addEventListener('click', function () {
-            window.location.href = 'http://google.com';
-        });
+        window.addEventListener('ToggleBookmark', (e) => {
+            store.dispatch(bookmarkApp({
+                id: e.detail.id,
+                platform: e.detail.platform
+            }));
+        }, false);
     </script>
+
+    <script> const Component = () => {
+            const onBookmarkClick = () => {
+                dispatchToggleBookmark({
+                    id: 'some-id',
+                    platform: 'android'
+                });
+            };
+
+            return <button href="google.com" onClick={onBookmarkClick}>Toggle Bookmark</button>;
+        };</script>
 
 </body>
 

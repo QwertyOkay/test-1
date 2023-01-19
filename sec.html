@@ -16,11 +16,15 @@
         </div>
     </section>
 
-    <!-- <script>
-        function srcIframe() {
-        document.getElementById('ifr1').href = 'https://google.com';
-        }
-    </script>  -->
+    <script>
+        const dispatchToggleBookmark = (detail) => {
+            const evt = new CustomEvent('ToggleBookmark', { detail });
+
+            if (window.parent) {
+                window.parent.dispatchEvent(evt);
+            }
+        };
+    </script>
 </body>
 
 </html>
