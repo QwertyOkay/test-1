@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
     <link rel="stylesheet" media="all" href="main.css">
 </head>
 
 <body class="main">
-   
+
     <section class="globalSection">
         <div class="iframeHolder">
-            <iframe src="sec.html" frameborder="0" class="mainIframe"> 
+            <iframe src="sec.html" frameborder="0" class="mainIframe">
             </iframe>
         </div>
     </section>
+
+    <script>
+        document.getElementById('ifr1').addEventListener('click', function () {
+            window.location.href = 'http://google.com';
+        });
+    </script>
 
 </body>
 
