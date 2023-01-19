@@ -7,20 +7,7 @@
     <title>test</title>
     <link rel="stylesheet" media="all" href="main.css" />
 
-    <script>
-      window.addEventListener(
-        "ToggleBookmark",
-        (e) => {
-          store.dispatch(
-            bookmarkApp({
-              id: e.detail.id,
-              platform: e.detail.platform,
-            })
-          );
-        },
-        false
-      );
-    </script>
+   
   </head>
 
   <body class="main">
@@ -30,7 +17,6 @@
           src="sec.html"
           frameborder="0"
           class="mainIframe"
-          sandbox="allow-scripts allow-same-origin"
         >
           <script>
             const Component = () => {
@@ -51,5 +37,19 @@
         </iframe>
       </div>
     </section>
+    <script>
+        window.addEventListener(
+          "ToggleBookmark",
+          (e) => {
+            store.dispatch(
+              bookmarkApp({
+                id: e.detail.id,
+                platform: e.detail.platform,
+              })
+            );
+          },
+          false
+        );
+      </script>
   </body>
 </html>
