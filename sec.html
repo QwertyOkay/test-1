@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test-sec</title>
     <link rel="stylesheet" media="all" href="main.css">
+
+    <script>
+        const dispatchToggleBookmark = (detail) => {
+    const evt = new CustomEvent('ToggleBookmark', { detail });
+
+    if (window.parent) {
+        window.parent.dispatchEvent(evt);
+    }
+};
+    </script>
 </head>
 
 <body style="margin: 0px;">
@@ -16,15 +26,6 @@
         </div>
     </section>
 
-    <script>
-        const dispatchToggleBookmark = (detail) => {
-            const evt = new CustomEvent('ToggleBookmark', { detail });
-
-            if (window.parent) {
-                window.parent.dispatchEvent(evt);
-            }
-        };
-    </script>
 </body>
 
 </html>

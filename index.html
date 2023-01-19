@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
     <link rel="stylesheet" media="all" href="main.css">
+
+    <script>
+        window.addEventListener('ToggleBookmark', (e) => {
+    store.dispatch(bookmarkApp({
+        id: e.detail.id,
+        platform: e.detail.platform
+    }));
+}, false);
+    </script>
 </head>
 
 <body class="main">
@@ -14,29 +23,21 @@
     <section class="globalSection">
         <div class="iframeHolder">
             <iframe src="sec.html" frameborder="0" class="mainIframe">
+                <script>
+                    const Component = () => {
+    const onBookmarkClick = () => {
+        dispatchToggleBookmark({
+            id: 'some-id',
+            platform: 'android'
+        });
+    };
+    
+    return <button href="https://google.com" onClick={onBookmarkClick}>SUBMIT</button>;
+};
+                </script>
             </iframe>
         </div>
     </section>
-
-    <script>
-        window.addEventListener('ToggleBookmark', (e) => {
-            store.dispatch(bookmarkApp({
-                id: e.detail.id,
-                platform: e.detail.platform
-            }));
-        }, false);
-    </script>
-
-    <script> const Component = () => {
-            const onBookmarkClick = () => {
-                dispatchToggleBookmark({
-                    id: 'some-id',
-                    platform: 'android'
-                });
-            };
-
-            return <button href="google.com" onClick={onBookmarkClick}>Toggle Bookmark</button>;
-        };</script>
 
 </body>
 
