@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>test</title>
-    <link rel="stylesheet" media="all" href="main.css">
+    <link rel="stylesheet" media="all" href="main.css" />
 
     <script>
-        window.addEventListener('ToggleBookmark', (e) => {
-    store.dispatch(bookmarkApp({
-        id: e.detail.id,
-        platform: e.detail.platform
-    }));
-}, false);
+      window.addEventListener(
+        "ToggleBookmark",
+        (e) => {
+          store.dispatch(
+            bookmarkApp({
+              id: e.detail.id,
+              platform: e.detail.platform,
+            })
+          );
+        },
+        false
+      );
     </script>
-</head>
+  </head>
 
-<body class="main">
-
+  <body class="main">
     <section class="globalSection">
-        <div class="iframeHolder">
-            <iframe src="sec.html" frameborder="0" class="mainIframe">
-                <script>
-                    const Component = () => {
-    const onBookmarkClick = () => {
-        dispatchToggleBookmark({
-            id: 'some-id',
-            platform: 'android'
-        });
-    };
-    
-    return <button href="https://google.com" onClick={onBookmarkClick}>SUBMIT</button>;
-};
-                </script>
-            </iframe>
-        </div>
+      <div class="iframeHolder">
+        <iframe
+          src="sec.html"
+          frameborder="0"
+          class="mainIframe"
+          sandbox="allow-scripts allow-same-origin"
+        >
+          <script>
+            const Component = () => {
+              const onBookmarkClick = () => {
+                dispatchToggleBookmark({
+                  id: "1",
+                  platform: "Windows",
+                });
+              };
+
+              return (
+                <button href="https://google.com" onClick={onBookmarkClick}>
+                  SUBMIT
+                </button>
+              );
+            };
+          </script>
+        </iframe>
+      </div>
     </section>
-
-</body>
-
+  </body>
 </html>
